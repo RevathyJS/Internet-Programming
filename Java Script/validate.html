@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width>, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function check()
+        {
+            let text=document.getElementById("t1").value;
+            if(text.match(/[A-Z]\.[A-Z]{1}[a-z]*/))
+            alert("correct name");
+            else
+            alert("invalid");
+        }
+    </script>
+</head>
+<body>
+    <form>
+        Name:<input type="text" id="t1">
+        <input type="submit" value="click" onclick="check();">
+    </form>
+</body>
+</html>
