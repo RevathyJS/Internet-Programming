@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const ex1 = 'The quick brown fox jumped over the lazy dog';
+        const ex2 = 'A1B2C3D4E5F6G7H8I9J10';
+        const ex3 = 'The salad costs $9.99';
+        const ex4 = 'Contact customer support on 0800 300 500';
+        const ex5 = 'You can contact me on Twitter @codebubb or james@juniordevelopercentral.com';
+
+        document.write(ex1.match(/(^|\s)[A-Za-z]{3}($|\s)/g));
+        document.write("<br>");
+        document.write(ex2.replace(/\d/g,''));
+        document.write("<br>");
+        document.write(ex3.match(/\$\d.\d\d/g));
+        document.write("<br>");
+        document.write(ex4.match(/(\d{3,5}\s?){3}/g));
+        document.write("<br>");
+        document.write(ex5.match(/[a-z]*\@[a-z]*\.[a-z]{2,3}/g));
+        document.write("<br>");
+    </script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Simple jQuery Exercise</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  </head>
+  <body>
+    <h1 id="heading">Welcome!</h1>
+    <button id="button">Click me!</button>
+    <script>
+      $(document).ready(function() {
+        var originalText = $("#heading").text();
+        var isHello = false;
+        $("#button").click(function() {
+          if (isHello) {
+            $("#heading").text(originalText);
+          } else {
+            $("#heading").text("Hello, World!");
+          }
+          isHello = !isHello;
+        });
+      });
+    </script>
+  </body>
+</html>

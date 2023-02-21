@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Simple jQuery Exercise</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+      li {
+        margin-bottom: 10px;
+        padding: 10px;
+        color: white;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <ul id="list"></ul>
+    <button id="button">Add Item</button>
+    <script>
+      function getRandomNumber(min, max) {
+        return Math.floor(Math.random() * (max - min + 1) + min);
+      }
+      function getRandomColor() {
+        var letters = "0123456789ABCDEF";
+        var color = "#";
+        for (var i = 0; i < 6; i++) {
+          color += letters[Math.floor(Math.random() * 16)];
+        }
+        return color;
+      }
+      $(document).ready(function() {
+        $("#button").click(function() {
+          var number = getRandomNumber(1, 10);
+          var color = getRandomColor();
+          var listItem = "<li style='background-color: " + color + "'>" + number + "</li>";
+          $("#list").append(listItem);
+        });
+      });
+    </script>
+  </body>
+</html>

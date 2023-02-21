@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Simple jQuery Exercise</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  </head>
+  <body>
+    <form>
+      <label for="input">Enter text:</label>
+      <input type="text" id="input">
+      <button type="button" id="button">Add Item</button>
+    </form>
+    <ul id="list"></ul>
+    <script>
+      $(document).ready(function() {
+        $("#button").click(function() {
+          var text = $("#input").val();
+          var listItem = "<li>" + text + "</li>";
+          $("#list").append(listItem);
+          $("#input").val("");
+        });
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function fun()
+        {
+            let upper="ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+            let lower="abcdefghijklmnopqrstuvwxyz";
+            var str="JIklo";
+            var con="";
+            for(i=0;i<str.length;i++)
+            {
+
+                if(upper.indexOf(str[i])!==-1)
+                {
+                    con+=str[i].toLowerCase();
+                }
+                if(lower.indexOf(str[i])!==-1)
+                {
+                    
+                    con+=str[i].toUpperCase();
+                }
+            }
+            document.write(con);
+        }
+        fun();
+    </script>
+</body>
+</html>

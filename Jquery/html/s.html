@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function validate()
+        {
+            
+            var n1=document.getElementById("t1").value;
+            var n2=document.getElementById("t2").value;
+            var n3=document.getElementById("t3").value;
+            var n4=document.getElementById("t4").value;
+            var n5=document.getElementById("t5").value;
+            var n6=document.getElementById("t6").value;
+
+            if(!isempty(n1))
+            document.getElementById("s1").innerHTML="*Enter First Name";
+            if(!isempty(n2))
+            document.getElementById("s2").innerHTML="*Enter Last Name";
+            if(!isempty(n3))
+            document.getElementById("s3").innerHTML="*Enter State";
+            if(!isempty(n4))
+            document.getElementById("s4").innerHTML="*Enter Pincode";
+            if(!isempty(n5))
+            document.getElementById("s5").innerHTML="*Enter user name";
+            if(!isempty(n6))
+            document.getElementById("s6").innerHTML="*Enter password";
+
+            if(!n1.match(/^[A-Z]{1}[a-z]*$/))
+            document.getElementById("s1").innerHTML="*Invalid First Name";
+            
+            if(!n2.match(/^[A-Z]{1}[a-z]*$/))
+            document.getElementById("s2").innerHTML="*Invalid Last Name";
+
+            if(!n3.match(/^[A-Z]{2}$/))
+            document.getElementById("s3").innerHTML="*Enter Two Letter for State";
+
+            if(n4.length!=6)
+            document.getElementById("s4").innerHTML="*Enter 6 digit pincode";
+
+            if(!n5.match(/^[a-z]*$/))
+            document.getElementById("s5").innerHTML="*Invalid User Name";
+
+            if(!n6.match(/[a-zA-Z0-9]*[\.\@\-\_]?/))
+            document.getElementById("s5").innerHTML="*Invalid Password";
+            
+        }
+        function isempty(n2)
+        {
+            if(n2.length==0)
+            return false;
+            else
+            return true;
+        }
+    </script>
+    <style>
+        span
+        {
+            color:red;
+        }
+    </style>
+</head>
+<body>
+        <table><tr><td>First Name:</td><td><input type="text" id="t1"></td><td><span id="s1"></span></span></td></tr>
+            <tr><td> Last Name:</td><td><input type="text" id="t2"></td><td><span id="s2"></span></span></td></tr>
+            <tr><td>State:</td><td><input type="text" id="t3"></td><td><span id="s3"></span></span></td></tr>
+            <tr><td>Pincode:</td><td><input type="text" id="t4"></td><td><span id="s4"></span></span></td></tr>
+            <tr><td>User Name:</td><td><input type="text" id="t5"></td><td><span id="s5"></span></span></td></tr>
+            <tr><td>password:</td><td><input type="text" id="t6"></td><td><span id="s6"></span></span></td></tr>
+            <tr><td colspan="3"><input type="submit" onclick="validate()"></td></tr>
+     
+   
+</body>
+</html>

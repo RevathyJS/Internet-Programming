@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Simple jQuery Exercise</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+      img {
+        max-width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <img id="image" src="https://picsum.photos/200" alt="Image">
+    <button id="button">Change Image</button>
+    <script>
+      $(document).ready(function() {
+        $("#button").click(function() {
+          $("#image").fadeOut(2000, function() {
+            $(this).attr("src", "https://picsum.photos/300");
+            $(this).fadeIn(2000);
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

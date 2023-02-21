@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .inputgroup span{
+          
+          color:red;
+
+        }
+        #sub-error
+        {
+            color:red;
+        }
+    </style>
+</head>
+<body>
+  
+   
+    <form>
+        <div class="inputgroup">
+            <label>Full Name</label>
+            <input type="text" placeholder="Enter your Name" id="t1" onkeyup="validatename()">
+            <span id="name-error"></span>
+        </div>
+        <div class="inputgroup">
+            <label>Phone No</label>
+            <input type="tel" placeholder="123 456 7890" id="t2" onkeyup="validatephone()">
+            <span id="phone-error"></span>
+        </div>
+        <div class="inputgroup">
+            <label>Email Id</label>
+            <input type="email" placeholder="Enter email" id="t3" onkeyup="validateemail()">
+             <span id="email-error"></span>
+        </div>
+        <div class="inputgroup">
+            <label>Your Message</label>
+            <textarea rows="5" placeholder="Enter your Message">Enter</textarea>
+            <span id="msg-error">msg is required</span>
+        </div>
+        <button>submit</button>
+        <span id="sub-error">Please fix error</span>
+    </form>
+    <script src="script.js"></script>
+</body>
+</html>
