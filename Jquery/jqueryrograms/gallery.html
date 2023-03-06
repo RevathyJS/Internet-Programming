@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../jquery.js"></script>
+    <script>
+        $(document).ready(function() {
+  // Show lightbox when an image is clicked
+  $('.gallery a').click(function(e) {
+    e.preventDefault();
+    var imageUrl = $(this).attr('href');
+    $('.lightbox-image').attr('src', imageUrl);
+    $('.lightbox').fadeIn();
+  });
+
+  // Hide lightbox when close button is clicked
+  $('.lightbox .close').click(function() {
+    $('.lightbox').fadeOut();
+  });
+
+  // Navigate through gallery using arrow buttons
+  $('.lightbox .prev').click(function() {
+    var currentImage = $('.lightbox-image').attr('src');
+    var prevImage = $('.gallery a[href="' + currentImage + '"]').prev().attr('href');
+    if (prevImage) {
+      $('.lightbox-image').attr('src', prevImage);
+    }
+  });
+
+  $('.lightbox .next').click(function() {
+    var currentImage = $('.lightbox-image').attr('src');
+    var nextImage = $('.gallery a[href="' + currentImage + '"]').next().attr('href');
+    if (nextImage) {
+      $('.lightbox-image').attr('src', nextImage);
+    }
+  });
+});
+    </script>
+    <style>
+        .gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.gallery a {
+  margin: 10px;
+}
+
+.gallery img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+}
+
+.lightbox {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 999;
+}
+
+.lightbox .close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 40px;
+  color: #fff;
+  cursor: pointer;
+}
+
+.lightbox .lightbox-image {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 90%;
+  max-height: 90%;
+}
+
+.lightbox .prev,
+.lightbox .next {
+  position: absolute;
+  top: 50%;
+  width: auto;
+  height: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: #fff;
+  font-size: 30px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.lightbox .next {
+  right: 0;
+}
+    </style>
+</head>
+<body>
+    <div class="gallery">
+        <a href="../image/border.png"><img src="image1-thumb.jpg" alt="Image 1"></a>
+        <a href="image2.jpg"><img src="image2-thumb.jpg" alt="Image 2"></a>
+        <a href="image3.jpg"><img src="image3-thumb.jpg" alt="Image 3"></a>
+        <a href="image4.jpg"><img src="image4-thumb.jpg" alt="Image 4"></a>
+      </div>
+      
+      <div class="lightbox">
+        <span class="close">&times;</span>
+        <img class="lightbox-image" src="">
+        <a class="prev" href="#">&#10094;</a>
+        <a class="next" href="#">&#10095;</a>
+      </div>
+      
+</body>
+</html>
